@@ -1,168 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PillowFlow B2B — Fleet &amp; Professional Seating</title>
-<style>
-  * { box-sizing: border-box; }
-  html, body { padding: 0; margin: 0; }
-  body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #ffffff;
-    color: #0f172a;
-    line-height: 1.6;
-  }
-  .container { max-width: 980px; margin: 0 auto; padding: 64px 24px; }
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background: #ffffff;
-    border: 1px solid #eef2f7;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-  }
-  .logo-text {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    font-size: 18px;
-  }
-  .section { margin-top: 64px; }
-  h1 {
-    font-size: 44px;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin: 0 0 18px;
-  }
-  .subtitle {
-    color: #475569;
-    font-size: 18px;
-    max-width: 640px;
-  }
-  .hero {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin-top: 40px;
-  }
-  .media {
-    background: #eef2f7;
-    border-radius: 18px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-  }
-  .media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .proof { margin-top: 28px; }
-  .proof h3 { margin: 0 0 10px; font-size: 16px; color: #334155; }
-  .proof ul { padding-left: 18px; margin: 0; color: #334155; }
-  .cta-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-  }
-  a.button {
-    display: inline-flex;
-    padding: 14px 20px;
-    border-radius: 12px;
-    background: #0a84ff;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a.button.secondary {
-    background: #ffffff;
-    color: #0f172a;
-    border: 1px solid #e2e8f0;
-  }
-  .grid { margin-top: 64px; }
-  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; background: #ffffff; }
-  .card .media { aspect-ratio: 3/2; }
-  .card h4 { margin: 10px 0 6px; font-size: 14px; }
-  .card p { margin: 0; font-size: 13px; color: #334155; }
-  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
-  @media (max-width: 780px) {
-    .hero { grid-template-columns: 1fr; }
-    h1 { font-size: 32px; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PillowFlow for Fleets &amp; Professional Drivers | B2B Seating Comfort</title>
+  <meta name="description" content="PillowFlow thigh support for fleets, rideshare, and professional drivers. Reduce fatigue, improve posture, and increase driver comfort on long routes." />
+  <link rel="preconnect" href="https://pillowflow.com" />
+  <link rel="preconnect" href="https://cdn.shopify.com" />
+  <link href="https://pillowflow.com/cdn/fonts/inter/inter_n4.woff2" rel="preload" as="font" type="font/woff2" crossorigin />
+  <link href="https://pillowflow.com/cdn/fonts/barlow_condensed/barlowcondensed_n6.woff2" rel="preload" as="font" type="font/woff2" crossorigin />
+  <style>
+    :root { --bg: #ffffff; --text: #0f172a; --secondary: #334155; --muted: #64748b; --accent: #0a84ff; --border: #e2e8f0; --surface: #f8fafc; }
+    * { box-sizing: border-box; }
+    html, body { padding: 0; margin: 0; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 72px 0; }
+    .section + .section { border-top: 1px solid var(--border); }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #0ea5e9, #0a84ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+    .brand-name { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+    .brand-tag { color: var(--muted); font-size: 12px; }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--secondary); }
+    .nav-cta {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--text);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 44px;
+      align-items: center;
+      padding: 64px 0 40px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .lead {
+      color: var(--secondary);
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 0 24px;
+    }
+    .meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid transparent;
+    }
+    .btn-ghost {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .hero-media {
+      background: linear-gradient(180deg, #f1f5f9, #eef2f7);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+    }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Proof strip */
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .proof-item {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .proof-item strong { font-size: 14px; display: block; margin-bottom: 4px; }
+    .proof-item span { font-size: 12px; color: var(--muted); }
+
+    /* Features grid */
+    .section-header { margin-bottom: 28px; }
+    .section-header h2 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 600; }
+    .section-header p { color: var(--secondary); margin: 0; max-width: 640px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .card-media {
+      aspect-ratio: 3/2;
+      background: #f8fafc;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; }
+    .card-body { padding: 14px; }
+    .card-body h4 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+    .card-body p { margin: 0; font-size: 13px; color: var(--secondary); }
+
+    /* Use cases */
+    .usecase-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .usecase {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .usecase-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .usecase h4 { margin: 0 0 4px; font-size: 14px; }
+    .usecase p { margin: 0; font-size: 13px; color: var(--secondary); }
+
+    /* FAQ */
+    .faq { display: grid; gap: 10px; }
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+    summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 18px; }
+    details[open] summary::after { content: "−"; }
+    .faq-body { padding-top: 10px; color: var(--secondary); font-size: 14px; }
+
+    /* CTA */
+    .cta-band {
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .cta-band h2 { margin: 0 0 10px; font-size: 32px; letter-spacing: -0.02em; }
+    .cta-band p { color: var(--secondary); margin: 0 auto 20px; max-width: 640px; }
+    .cta-band .buttons { justify-content: center; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer .container { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    footer a { color: var(--secondary); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .proof { grid-template-columns: repeat(2, 1fr); }
+      .usecase-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 34px; }
+      .proof { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-  <div class="brand">
-    <div>
-      <div class="logo-text">PillowFlow</div>
-      <div style="font-size: 13px; color: #64748b;">Fleet Seating Program</div>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">P</div>
+        <div>
+          <div class="brand-name">PillowFlow</div>
+          <div class="brand-tag">Fleet &amp; Professional Program</div>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="B2B navigation">
+        <a href="#use-cases">Use cases</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="mailto:hello@pillowflow.com">Request fleet quote</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="section">
-    <h1>Comfort and stability for professional drivers and fleet vehicles.</h1>
-    <p class="subtitle">
-      PillowFlow is a driver thigh-support cushion designed to reduce fatigue,
-      improve posture, and make long-haul and professional driving more comfortable.
-    </p>
-    <div class="hero">
-      <div class="media">
-        <img src="img/product-shot.jpg" alt="PillowFlow driver support cushion product shot" />
-      </div>
-      <div class="proof">
-        <h3>Why fleets are evaluating PillowFlow</h3>
-        <ul>
-          <li>Thigh support for seated driving comfort</li>
-          <li>Stable fit on professional vehicle seating</li>
-          <li>Easier cleaning and durability testing planned</li>
-          <li>Better comfort on long routes and repeated trips</li>
-        </ul>
-        <div class="cta-row">
-          <a class="button" href="mailto:hello@pillowflow.com">Request fleet quote</a>
-          <a class="button secondary" href="https://pilot.pillowflow.com">Open pilot program</a>
+  <main id="MainContent">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <h1>Driver comfort that supports <em>long-haul performance</em>.</h1>
+          <p class="lead">PillowFlow is a driver thigh-support cushion designed to reduce fatigue, improve seated posture, and help professional drivers stay comfortable mile after mile.</p>
+          <div class="meta">
+            <span>Driver-developed ergonomics</span>
+            <span>Fleet-friendly fit</span>
+          </div>
+          <div class="buttons">
+            <a class="btn" href="mailto:hello@pillowflow.com">Request fleet quote</a>
+            <a class="btn btn-ghost" href="https://pilot.pillowflow.com">Review pilot program</a>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="hero-media">
+          <img src="https://pillowflow.com/cdn/shop/files/Pillow_Flow_Icon_1200x628_v02.png" alt="PillowFlow ergonomic thigh support for drivers" />
+        </div>
+      </section>
 
-  <div class="section grid">
-    <h1 style="font-size: 34px;">Built for real fleet conditions</h1>
-    <div class="cards">
-      <div class="card">
-        <div class="media">
-          <img src="img/features-callout.jpg" alt="Engineered for performance feature callouts" />
+      <section class="section">
+        <div class="proof">
+          <div class="proof-item">
+            <strong>Targeted comfort</strong>
+            <span>Support designed for seated driving posture.</span>
+          </div>
+          <div class="proof-item">
+            <strong>Reduced fatigue</strong>
+            <span>Less thigh pressure on long routes and repeated trips.</span>
+          </div>
+          <div class="proof-item">
+            <strong>Stable fit</strong>
+            <span>Low-profile support suited to fleet seating.</span>
+          </div>
+          <div class="proof-item">
+            <strong>Easy care</strong>
+            <span>Designed for routine cleaning and fleet use.</span>
+          </div>
         </div>
-        <h4>Targeted thigh support</h4>
-        <p>Shaped to stabilize the leg for seated driving comfort on long trips.</p>
-      </div>
-      <div class="card">
-        <div class="media">
-          <img src="img/in-seat.jpg" alt="PillowFlow cushion installed in car seat" />
-        </div>
-        <h4>Seat-fit stability</h4>
-        <p>Low-profile support that stays in place during normal vehicle use.</p>
-      </div>
-      <div class="card">
-        <div class="media">
-          <img src="img/product-shot.jpg" alt="PillowFlow orange ergonomic cushion" />
-        </div>
-        <h4>Fleet-ready durability</h4>
-        <p>Cleaning, feedback collection, and sample validation are part of the pilot path.</p>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <div class="section">
-    <div style="margin-top: 28px;">
-      <a class="button" href="mailto:hello@pillowflow.com">Talk to fleet program</a>
+      <section class="section" id="benefits">
+        <div class="section-header">
+          <h2>Built for fleet and professional driving</h2>
+          <p>PillowFlow is developed around real driver needs so you can evaluate it for performance, durability, and daily comfort in fleet vehicles.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="card-media">
+              <img src="img/in-seat.jpg" alt="PillowFlow installed in driver seat" />
+            </div>
+            <div class="card-body">
+              <h4>Seat-fit stability</h4>
+              <p>Low profile for professional seating, with an adjustable strap designed to stay in place during normal driving.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media">
+              <img src="img/features-callout.jpg" alt="Ergonomic thigh support callouts" />
+            </div>
+            <div class="card-body">
+              <h4>Long-route comfort</h4>
+              <p>Shaped right-thigh support intended to reduce leg fatigue on extended drives and repeated shifts.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media">
+              <img src="img/product-shot.jpg" alt="PillowFlow support cushion overview" />
+            </div>
+            <div class="card-body">
+              <h4>Fleet validation</h4>
+              <p>Cleaning routines, durability review, and driver feedback can be built into fleet onboarding and pilot use.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="use-cases">
+        <div class="section-header">
+          <h2>Who uses PillowFlow</h2>
+          <p>From regional fleets to independent professional drivers, PillowFlow is built for long hours in seated driving positions.</p>
+        </div>
+        <div class="usecase-list">
+          <div class="usecase">
+            <div class="usecase-icon">F</div>
+            <div>
+              <h4>Fleet operators</h4>
+              <p>Route reliability, driver comfort, and fleet wear can be improved by reducing leg fatigue and constant seat shifting.</p>
+            </div>
+          </div>
+          <div class="usecase">
+            <div class="usecase-icon">R</div>
+            <div>
+              <h4>Rideshare</h4>
+              <p>Urban stop-and-go and longer pickup stretches can strain seated posture for hours each day.</p>
+            </div>
+          </div>
+          <div class="usecase">
+            <div class="usecase-icon">L</div>
+            <div>
+              <h4>Logistics and delivery</h4>
+              <p>Repeated trips and cab confinement make comfort a performance factor, not just a perk.</p>
+            </div>
+          </div>
+          <div class="usecase">
+            <div class="usecase-icon">P</div>
+            <div>
+              <h4>Professional drivers</h4>
+              <p>Daily drivers spending hours behind the wheel can benefit from improved thigh support and circulation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>Frequently asked questions</h2>
+          <p>Common fleet and program questions to help you move faster.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Will PillowFlow fit our existing fleet vehicles?</summary>
+            <div class="faq-body">PillowFlow is designed to fit most car and truck seats with a low-profile shape and adjustable strap. We recommend validating fit in a sample vehicle before fleet rollout.</div>
+          </details>
+          <details>
+            <summary>Is this a medical device?</summary>
+            <div class="faq-body">No. PillowFlow is a comfort aid intended to reduce thigh pressure and improve seated comfort while driving. It does not diagnose, treat, or prevent disease.</div>
+          </details>
+          <details>
+            <summary>How do fleets place orders and manage setup?</summary>
+            <div class="faq-body">Fleet orders are handled through a dedicated quote process. We can help align onboarding documentation, cleaning guidance, and support steps.</div>
+          </details>
+          <details>
+            <summary>What should drivers expect during the pilot?</summary>
+            <div class="faq-body">Drivers should expect a simple fit and adjustment process, then daily use during routes with feedback collected through the pilot program.</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="cta-band">
+          <h2>Talk to the PillowFlow team</h2>
+          <p>Share your fleet size, routes, and timeline. We will help you evaluate the fastest way to measure driver comfort and fit.</p>
+          <div class="buttons">
+            <a class="btn" href="mailto:hello@pillowflow.com">Request fleet quote</a>
+            <a class="btn btn-ghost" href="https://pilot.pillowflow.com">Review pilot program</a>
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-</div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year">2026</span> PillowFlow</div>
+      <div>
+        <a href="https://pillowflow.com/pages/contact">Contact</a>
+        &nbsp;·&nbsp;
+        <a href="https://pillowflow.com/policies/privacy-policy">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="https://pillowflow.com/policies/refund-policy">Returns</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
