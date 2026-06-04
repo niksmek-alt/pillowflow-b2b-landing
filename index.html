@@ -83,6 +83,13 @@
     color: #0f172a;
     border: 1px solid #e2e8f0;
   }
+  .grid { margin-top: 64px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; background: #ffffff; }
+  .card .media { aspect-ratio: 3/2; }
+  .card h4 { margin: 10px 0 6px; font-size: 14px; }
+  .card p { margin: 0; font-size: 13px; color: #334155; }
+  @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
   @media (max-width: 780px) {
     .hero { grid-template-columns: 1fr; }
     h1 { font-size: 32px; }
@@ -106,7 +113,7 @@
     </p>
     <div class="hero">
       <div class="media">
-        <img src="hero-product.jpg" alt="PillowFlow driver support cushion on seat" />
+        <img src="img/product-shot.jpg" alt="PillowFlow driver support cushion product shot" />
       </div>
       <div class="proof">
         <h3>Why fleets are evaluating PillowFlow</h3>
@@ -121,6 +128,39 @@
           <a class="button secondary" href="https://pilot.pillowflow.com">Open pilot program</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="section grid">
+    <h1 style="font-size: 34px;">Built for real fleet conditions</h1>
+    <div class="cards">
+      <div class="card">
+        <div class="media">
+          <img src="img/features-callout.jpg" alt="Engineered for performance feature callouts" />
+        </div>
+        <h4>Targeted thigh support</h4>
+        <p>Shaped to stabilize the leg for seated driving comfort on long trips.</p>
+      </div>
+      <div class="card">
+        <div class="media">
+          <img src="img/in-seat.jpg" alt="PillowFlow cushion installed in car seat" />
+        </div>
+        <h4>Seat-fit stability</h4>
+        <p>Low-profile support that stays in place during normal vehicle use.</p>
+      </div>
+      <div class="card">
+        <div class="media">
+          <img src="img/product-shot.jpg" alt="PillowFlow orange ergonomic cushion" />
+        </div>
+        <h4>Fleet-ready durability</h4>
+        <p>Cleaning, feedback collection, and sample validation are part of the pilot path.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div style="margin-top: 28px;">
+      <a class="button" href="mailto:hello@pillowflow.com">Talk to fleet program</a>
     </div>
   </div>
 </div>
